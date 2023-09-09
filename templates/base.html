@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}
+      
+    {% endblock title %}</title>
+
+    {% block scripts %}
+    {% endblock scripts %}
+
+  
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+   
+     
+
+    <script href="{% static 'assets/js/scipt.js' %}"></script>
+    
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+</head>
+<body>
+    <nav>
+        <div class="bg-primary nav-wrapper">
+          <a href="#" class="brand-logo center">My Blogs</a>
+        </div>
+      </nav>
+                
+    {% block body %}
+      
+    {% endblock body %}
+
+    {% include "footer.html" %}
+    <script>
+        M.AutoInit();
+    </script>  
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script> 
+    <script>
+      $(document).ready(function(){
+        $(".owl-carousel").owlCarousel();
+      });
+    </script>
+</body>
+</html>
